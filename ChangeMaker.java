@@ -4,7 +4,7 @@ public class ChangeMaker {
 		int cents = 0;
 
 		try {
-			cents = Integer.parseInt(args[0]); // converts string to int
+			cents = Integer.parseInt(args[0]);
 			
 			if (cents < 0) {
 				throw new IllegalArgumentException("negative value");
@@ -29,26 +29,22 @@ public class ChangeMaker {
 	
 	public static int getQuarters(int cents) {
 		int quarterValue = 25;
-		int quarters = (cents / quarterValue);	
-		return quarters;
+		return (cents / quarterValue);
 	}
 	
 	public static int getDimes(int cents) {
-		int dimeValue = 10;
-		int dimes = (cents / dimeValue);	
-		return dimes;
+		int dimeValue = 10;	
+		return (cents / dimeValue);
 	}
 	
 	public static int getNickels(int cents) {
-		int nickelValue = 5;
-		int nickels = (cents / nickelValue);	
-		return nickels;
+		int nickelValue = 5;	
+		return (cents / nickelValue);
 	}
 	
 	public static int getPennies(int cents) {
-		int pennyValue = 1;
-		int pennies = (cents / pennyValue);	
-		return pennies;
+		int pennyValue = 1;	
+		return (cents / pennyValue);
 	}
 	
 	public static int[] getChange(int cents) {
@@ -79,9 +75,7 @@ public class ChangeMaker {
 			remainingCents = remainingCents - (totalPennies * 1);
 		}
 		
-		int[] change = {totalQuarters, totalDimes, totalNickels, totalPennies};
-		
-		return change;
+		return new int[] {totalQuarters, totalDimes, totalNickels, totalPennies};
 	}	
 
 }
